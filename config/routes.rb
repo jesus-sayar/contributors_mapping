@@ -9,5 +9,5 @@ Rails.application.routes.draw do
   resources :projects, only: [:create] do
     collection { get :random }
   end
-  get ':username/:repo' => "projects#show", as: :project
+  get ':username/:repo' => "projects#show", as: :project, constraints: { repo: /[^\/]*/ }
 end
