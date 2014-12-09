@@ -1,0 +1,32 @@
+<section class="project_details">
+  <h2>
+    <%= link_to @project.username, "https://github.com/#{@project.username}" , target: '_blank'%> / 
+    <%= link_to @project.name, "https://github.com/#{@project.username}/#{@project.name }", target: '_blank' %>
+  </h2>
+
+  <p><%= @project.description %></p>
+
+  <div class="github_stats">
+    <div class="stat_count">
+      <%= number_to_human(@project.contributors.count, precision: 0) %>
+    </div>
+    <div class="stat_type">Contributors </div>
+
+    <div class="stat_count">
+      <%= number_to_human(@project.contributions, precision: 0) %>
+    </div>
+    <div class="stat_type">Contributions </div>
+
+    <div class="stat_count">
+      <%= number_to_human(@project.countries, precision: 0) %>
+    </div>
+    <div class="stat_type">Countries </div>
+
+    <div class="stat_count">
+      <%= number_to_human(@project.states, precision: 0) %>
+    </div>
+    <div class="stat_type">States </div>
+  </div>
+
+  <div id="map_canvas" data-cartodb-username="<%= $cartodb_username %>" data-cartodb-table-name="<%= @project.cartodb_table_name %>"></div>
+</section>

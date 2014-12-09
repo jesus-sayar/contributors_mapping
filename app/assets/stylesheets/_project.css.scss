@@ -1,0 +1,112 @@
+/* Project header */
+
+.secondary_header {
+  height: 74px;
+  background: #48cfad;
+  h1{
+    padding: 15px 0 0 0;
+    a{
+      font-family: 'Helvetica W01 Bold', "Helvetica Neue", Helvetica, Arial, sans-serif bold, "Helvetica Neue", Helvetica, Arial, sans-serif, arial, sans-serif;
+      font-size: 30px;
+      color: #fff;
+      display: block;
+      &:hover {
+        text-decoration: none;
+      }
+    }
+  }
+}
+
+/* CartoDB customize */
+#map_canvas{
+  height: 500px;
+  margin: 30px 0;
+}
+
+div.cartodb-popup div.cartodb-popup-content-wrapper {
+  max-width: inherit !important;
+  width: inherit !important;
+}
+
+div.cartodb-popup h4 {
+  color: #e4796b !important;
+}
+
+div.cartodb-popup p {
+  color: #3a988c !important;
+}
+
+/* Project details */
+.project_details{
+  padding: 40px 0 50px 0;
+  h2{
+    color: #dddddd;
+    a {
+      text-decoration: none;
+      color: #48cfad;
+    }
+  }
+}
+
+.project_details h2 a:first-child{
+  color: #fc6e51;
+}
+.project_details p{
+  padding: 8px 0 20px 0;
+}
+
+.contributors_list .contributor {
+  height: 200px;
+  .avatar {
+    text-align: center;
+    img{
+      height: 100px;
+    }
+  }
+  .name {
+    color: #B81609;
+    font: 18px/32px "input_mono_compressedmedium", sans-serif;
+    text-align: center;
+  }
+  .location {
+    color: #bea54d;
+    font: 14px "input_mono_compressedmedium", sans-serif;
+    text-align: center;
+  }
+}
+
+/* github stats */
+.github_stats {
+  display: -webkit-box;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+  justify-content: flex-start;
+  -moz-justify-content: flex-start;
+  -webkit-justify-content: flex-start;
+  padding: 8px 0 20px 0;
+
+  .stat_type {
+    color: #48cfad;
+    margin: 5px 20px 0 0;
+  }
+
+  .stat_count {
+    border-radius: 16px;
+    width: 32px;
+    height: 32px;
+    text-align: center;
+    border: 1px solid #48cfad;
+    color: #48cfad;
+    padding-top: 5px;
+    font-size: 13px;
+    margin: 0 10px 0 0;
+    &:hover {
+      cursor: pointer;
+      color: #fff;
+      background: #48cfad;
+    }
+  }
+}
+

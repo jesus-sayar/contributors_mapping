@@ -1,0 +1,82 @@
+<section class="project_lists">
+  <div class="container">
+    <h2>Analized Projects</h2>
+    <% if @dashboard.all_projects.any? %>
+      <div class="row">
+        <div class="col-md-6 col-sm-6 col-xs-12">
+          <ul class="projects projects_list1">
+            <% @dashboard.some_projects.each do |project| %>
+              <li class="project">
+                <%= render 'projects/summary', project: project %>
+              </li>
+            <% end %>
+          </ul>
+        </div>
+        <div class="col-md-6 col-sm-6 col-xs-12">
+          <ul class="projects projects_list2">
+            <% @dashboard.other_projects.each do |project| %>
+              <li class="project">
+                <%= render 'projects/summary', project: project %>
+              </li>
+            <% end %>
+          </ul>
+        </div>
+      </div>
+    <% else %>
+      <div class="empty">
+        <p>There is no projects yet.</p>
+        <p>Run <strong>rake projects:create_recommended[username,repo]</strong></p> 
+      </div>
+    <% end %>
+  </div>
+</section>
+
+<section class="why_open_source">
+  <div class="container">
+    <h2>Contributing to open source</h2>
+    <ul class="row">
+      <li class="col-md-4 col-sm-4 col-xs-12">
+        <h3>Experience</h3>
+        <p>Developing open source projects gives you tons of opportunities
+        to focus on what you find most interesting and meet other interesting
+        developers around the world.</p>
+      </li>
+      <li class="col-md-4 col-sm-4 col-xs-12">
+        <h3>Remote</h3>
+        <p>The most talented people in the world don't all live in one
+        place. The best place to live depends on who you are and what you like.
+        The modern office has become an interruption factory.</p>
+      </li>
+      <li class="col-md-4 col-sm-4 col-xs-12">
+        <h3>Mixin</h3>
+        <p>Probably you can focus on a project that you're also are in
+        need of. Mixing work with pleasure is not a bad idea.</p>
+      </li>
+    </ul>
+  </div>
+</section>
+
+<section class="quickstart">
+  <div class="container">
+    <h2>Quick Start</h2>
+    <ul class="row">
+      <li class="col-md-4 col-sm-4 col-xs-12">
+        <figure class="step_icon"><%= image_tag("download_icon.png") %></figure>
+        <h3>Download</h3>
+        <p>Download the <%= link_to "Contributors Mapping", "https://github.com/jesus-sayar/contributors_mapping" %> project and
+        configure it following the instructions of
+        the readme file.</p>
+      </li>
+      <li class="col-md-4 col-sm-4 col-xs-12">
+        <figure class="step_icon"><%= image_tag("script_icon.png") %></figure>
+        <h3>Run Script</h3>
+        <p>Choose your favorites projects and use our simplest data import.</p>
+      </li>
+      <li class="col-md-4 col-sm-4 col-xs-12">
+        <figure class="step_icon"><%= image_tag("map_icon.png") %></figure>
+        <h3>Enjoy</h3>
+        <p>Look beautiful visualizations and make sense to location data. Enjoy it!</p>
+      </li>
+    </ul>
+  </div>
+</section>

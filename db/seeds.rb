@@ -1,0 +1,1 @@
+AdminUser.create(email: "admin@contributors_mapping.com", password: "abc123", password_confirmation: "abc123")

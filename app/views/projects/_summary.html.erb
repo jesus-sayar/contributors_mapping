@@ -1,0 +1,18 @@
+<div class="project_header">
+  <%= link_to "#{project.username} / #{project.name}", project_path(project.username, project.name), class: "project_title" %>
+  <ul class="stats">
+    <li class="stat_contributors" data-toggle="tooltip" title="Contributors">
+      <%= number_to_human(project.contributors.count, precision: 0) %>
+    </li>
+    <li class="stat_contributions" data-toggle="tooltip" title="Contributions">
+      <%= number_to_human(project.contributions, precision: 0) %>
+    </li>
+    <li class="stat_countries" data-toggle="tooltip" title="Countries">
+      <%= number_to_human(project.countries, precision: 0) %>
+    </li>
+    <li class="stat_states" data-toggle="tooltip" title="States">
+      <%= number_to_human(project.states, precision: 0) %>
+    </li>
+  </ul>
+</div>
+<p class="project_description"><%= project.description %></p>

@@ -1,0 +1,15 @@
+<header class="dashboard_header">
+  <div class="container">
+    <h1><%= link_to "Contributors Mapping", root_path %></h1>
+    <div class="row">
+      <div class="col-md-7 col-sm-6 col-xs-12">
+        <p>Using  <a href="https://developer.github.com/">GitHub API</a> and <a href="https://cartodb.com">CartoDB</a>, Contributor Mapping scans open source projects, allowing you to discover where live the contributors and that world zones are more active.</p>
+        <h3>Not sure what project to work on?</h3>
+        <%= link_to "I'm feeling lucky!", random_projects_path, class: "im_feeling_lucky" %>
+      </div>
+      <div class="col-md-5 col-sm-6 col-xs-12">
+        <figure class="logo"><%= image_tag "map_line.png", class: "img-responsive", alt: "Contributors Map logo" %></figure> 
+      </div>
+    </div>
+  </div>
+</header>

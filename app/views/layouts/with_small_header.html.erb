@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Contributors Mapping</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Open Source contributors map" />
+    <meta name="author" content="Jesus Sayar Celestino" />
+    <meta property="og:image" content="IMAGEN">
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+    <link rel="stylesheet" href="http://libs.cartocdn.com/cartodb.js/v3/3.11/themes/css/cartodb.css" /> 
+    <link href='http://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css'>
+    <%= csrf_meta_tags %>
+</head>
+  <body>
+
+    <header class="secondary_header">
+      <div class="container">
+        <h1 class="logo"><%= link_to "Contributors Mapping", root_path %></h1>
+      </div>
+    </header>
+
+    <div class="container"><%= yield %></div>
+
+    <%= render 'layouts/footer' %>
+  </body>
+  <script src="http://libs.cartocdn.com/cartodb.js/v3/3.11/cartodb.js"></script>
+  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+</html>
