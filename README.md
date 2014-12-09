@@ -1,15 +1,18 @@
+# Contributors Mapping
+
+Contributors Mapping is a analytic and visualization web about Open Source projects. Using GitHub API and CartoDB scans open source projects, allowing you to discover where live the contributors and that world zones are more active.
+
 ## Installation
 
-Clone this project
+Clone this project and install its gems:
 
 ```bash
 git clone URL
 cd contributors_mapping
 bundle install
 ```
-Configure GitHub API
 
-You should configure github_client.rb initializer with your data.
+Configure the GitHub API client updating github_client.rb initializer with your data:
 
 ```ruby
 Github.configure do |c|
@@ -17,17 +20,14 @@ Github.configure do |c|
 end
 ```
 
-Configure CartoDB API
-
-You should configure cartodb_client.rb initializer with your data. You can visit [CartoDB docu](http://docs.cartodb.com/cartodb-platform/sql-api.html#api-key)
-for get your API key.
+Configure the CartoDB API client updating cartodb_client.rb initializer with your data. You can visit [CartoDB documentation](http://docs.cartodb.com/cartodb-platform/sql-api.html#api-key) for get your API key:
 
 ```ruby
 $cartodb_username = "username"
 $cartodb_api_key = "your-api-key"
 ```
 
-Create DB and run
+Create DB and run the server:
 
 ```bash
 rake db:setup
@@ -49,6 +49,12 @@ rake projects:create_recommended["rails","rails"]
 ```
 
 Now you can browse in the project and you see a new map visualization with this data.
+
+## Architecture
+
+Contributors Mapping consult GitHub API for fetch data about a Open Source project and its contributors. Upload this data to CartoDB cloud and then create analytics and visualizations.
+
+GitHub and CartoDB API's have restrictions on the number of daily calls. You can create some project analytics, but if you need consult many projects you will need hire advanced subscriptions on this services.
 
 ## Testing
 
