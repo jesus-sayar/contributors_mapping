@@ -17,3 +17,7 @@
 
 # Ignore this files
 /public/cartodb_files/*
+/public/assets/*
+/config/database.yml
+/config/initializers/github_clientdy.rb
+/config/initializers/cartodb_client.rb

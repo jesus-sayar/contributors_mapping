@@ -23,6 +23,13 @@ describe Dashboard do
       dashboard = Dashboard.new
       expect(dashboard.some_projects).to eq [@fake_projects[0], @fake_projects[1], @fake_projects[2]]
     end
+
+    it "returns empty array if there is not projects" do
+      allow(Project).to receive(:all) { [] }
+
+      dashboard = Dashboard.new
+      expect(dashboard.some_projects).to eq []
+    end
   end
 
   describe "#other_projects" do
@@ -31,6 +38,13 @@ describe Dashboard do
 
       dashboard = Dashboard.new
       expect(dashboard.other_projects).to eq [@fake_projects[2], @fake_projects[3]]
+    end
+
+    it "returns empty array if there is not projects" do
+      allow(Project).to receive(:all) { [] }
+
+      dashboard = Dashboard.new
+      expect(dashboard.other_projects).to eq []
     end
   end
 end

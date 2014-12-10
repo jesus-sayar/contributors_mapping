@@ -1,5 +1,7 @@
 # Contributors Mapping
 
+[![Code Climate](https://codeclimate.com/github/jesus-sayar/contributors_mapping/badges/gpa.svg)](https://codeclimate.com/github/jesus-sayar/contributors_mapping)
+
 Contributors Mapping is a analytic and visualization web about Open Source projects. Using GitHub API and CartoDB scans open source projects, allowing you to discover where live the contributors and that world zones are more active.
 
 ## Installation
