@@ -12,4 +12,16 @@ FactoryGirl.define do
     state "Pontevedra"
     city "Vigo"
   end
+
+  factory :best_contributor, parent: :contributor do
+    contributions 300
+  end
+
+  factory :middle_contributor, parent: :contributor do
+    contributions 100
+  end
+
+  factory :worst_contributor, parent: :contributor do
+    contributions 5
+  end
 end

@@ -56,10 +56,55 @@ class Project < ActiveRecord::Base
   end
 
   def states
+    puts "staes vale #{self.contributors.map(&:state)}"
     self.contributors.map(&:state).uniq.count
   end
 
   def cities
     contributors.map(&:city).uniq.count
   end
+
+  def top_contributors
+    sort_by_contributions(contributors)
+  end
+
+  def top_countries
+    countries_counter = counter_contributions_by(:country)
+    countries = countries_counter.map do |country, contributions|
+      {country: country, contributions: contributions}
+    end
+    sort_by_contributions(countries)
+  end
+
+  def top_states
+    states_counter = counter_contributions_by(:state)
+    states = states_counter.map do |state, contributions|
+      {state: state, contributions: contributions}
+    end
+    states.delete_if { |top| top[:state].blank? }
+    sort_by_contributions(states)
+  end
+
+  private
+    def counter_contributions_by(field)
+      counter = {}
+      contributors.each do |contributor|
+        if counter[contributor.send(field)]
+          counter[contributor.send(field)] += contributor.contributions.to_i
+        else
+          counter[contributor.send(field)] = contributor.contributions.to_i
+        end
+      end
+      counter
+    end
+
+    def sort_by_contributions(elements)
+      elements.sort do |a,b|
+        if a.is_a?(Hash) and b.is_a?(Hash)
+          b[:contributions].to_i <=> a[:contributions].to_i 
+        else
+          b.contributions.to_i <=> a.contributions.to_i
+        end
+     end.first(10)
+    end
 end

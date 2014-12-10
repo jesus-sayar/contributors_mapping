@@ -29,4 +29,69 @@
   </div>
 
   <div id="map_canvas" data-cartodb-username="<%= $cartodb_username %>" data-cartodb-table-name="<%= @project.cartodb_table_name %>"></div>
+
+  <div class="container">
+    <div class="row">
+      <div class="col-md-4 col-sm-4 col-xs-12 top">
+        <h3>Top Countries</h3>
+        <table>
+          <thead>
+            <th>Country</th>
+            <th>Contributions</th>
+          </thead>
+          <tbody>
+            <% @project.top_countries.each do |top| %>
+              <tr>
+                <td><%= top[:country] %></td>
+                <td class="contributions">
+                  <%= top[:contributions]%>
+                </td>
+              </tr>
+            <% end %>
+          </tbody>
+        </table>
+      </div>
+      <div class="col-md-4 col-sm-4 col-xs-12 top">
+        <h3>Top States</h3>
+        <table>
+          <thead>
+            <th>State</th>
+            <th>Contributions</th>
+          </thead>
+          <tbody>
+            <% @project.top_states.each do |top| %>
+              <tr>
+                <td><%= top[:state] %></td>
+                <td class="contributions">
+                  <%= top[:contributions]%>
+                </td>
+              </tr>
+            <% end %>
+          </tbody>
+        </table>
+      </div>
+      <div class="col-md-4 col-sm-4 col-xs-12 top">
+        <h3>Top Contributors</h3>
+        <table>
+          <thead>
+            <th>User</th>
+            <th>Contributions</th>
+          </thead>
+          <tbody>
+            <% @project.top_contributors.each do |contributor| %>
+              <tr>
+                <td>
+                  <%= image_tag contributor.avatar_url, class: "avatar img-circle"%>
+                  <%= link_to contributor.username, contributor.github_url %>
+                </td>
+                <td class="contributions">
+                  <%= contributor.contributions %>
+                </td>
+              </tr>
+            <% end %>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
 </section>

@@ -51,8 +51,39 @@ div.cartodb-popup p {
 .project_details h2 a:first-child{
   color: #fc6e51;
 }
+
 .project_details p{
   padding: 8px 0 20px 0;
+}
+
+.project_details .top {
+  h3 {
+    font-family: 'Helvetica W01 Bold', "Helvetica Neue", Helvetica, Arial, sans-serif bold, "Helvetica Neue", Helvetica, Arial, sans-serif, arial, sans-serif;
+    color: #48cfad;
+    margin-bottom: 15px;
+  }
+  table {
+    th {
+      color: #48cfad;
+      padding-bottom: 10px;
+    }
+    td {
+      padding-bottom: 10px;
+    }
+    .contributions {
+      text-align: center;
+    }
+    .avatar {
+      height: 20px;
+    }
+    a {
+      color: #5e5e5e;
+      border-bottom: 1px dotted #5e5e5e;
+      &:hover {
+        text-decoration: none;
+      }
+    }
+  }
 }
 
 .contributors_list .contributor {
